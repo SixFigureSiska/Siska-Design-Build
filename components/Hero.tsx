@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "./Container";
 import { Button } from "./Button";
+import { QuoteCTAButton } from "./QuoteCTAButton";
 
 export function Hero() {
   return (
@@ -17,7 +18,7 @@ export function Hero() {
               Bathrooms, kitchens, and custom interiors planned around your home, visualized before construction, and quoted with the scope clearly spelled out.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button href="/contact" variant="white" className="sm:px-7">Plan My Remodel</Button>
+              <QuoteCTAButton variant="white" className="sm:px-7">Plan My Remodel</QuoteCTAButton>
               <Button href="/work" variant="outlineOnDark" className="sm:px-7">Explore the Work</Button>
             </div>
             <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 border-t border-white/15 pt-6 text-xs font-semibold text-white/62">

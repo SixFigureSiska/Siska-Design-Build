@@ -1,4 +1,4 @@
-import { Button } from "./Button";
+import { QuoteCTAButton } from "./QuoteCTAButton";
 import { Container } from "./Container";
 import { Photo } from "./Photo";
 import { siteConfig } from "@/lib/siteConfig";
@@ -44,9 +44,9 @@ export function LocalServicePage({
                   </li>
                 ))}
               </ul>
-              <Button href="/contact" variant="primary" className="mt-8">
+              <QuoteCTAButton variant="primary" className="mt-8">
                 Plan My {serviceName}
-              </Button>
+              </QuoteCTAButton>
             </div>
             <Photo
               src={image}

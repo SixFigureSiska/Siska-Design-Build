@@ -29,9 +29,12 @@ export function Footer() {
             <Link href="/contact" className="mt-2 inline-flex font-bold text-white underline decoration-[#89a9bd] underline-offset-4">Request a free consultation</Link>
           </FooterColumn>
         </div>
-        <div className="flex flex-col gap-2 pt-7 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-3 pt-7 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">
           <span>&copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.</span>
-          <span>Licensed &amp; insured • Design + Build</span>
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <Link href="/privacy" className="underline decoration-white/25 underline-offset-4 transition hover:text-white">Privacy Policy</Link>
+            <span>Licensed &amp; insured • Design + Build</span>
+          </div>
         </div>
       </Container>
     </footer>

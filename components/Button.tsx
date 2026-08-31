@@ -4,11 +4,10 @@ import Link from "next/link";
 type ButtonVariant = "primary" | "outline" | "outlineOnDark" | "white";
 
 type ButtonProps = {
-  href: string;
   children: ReactNode;
   variant?: ButtonVariant;
   className?: string;
-};
+} & ({ href: string; onClick?: never } | { href?: undefined; onClick: () => void });
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
@@ -23,19 +22,31 @@ const variantClasses: Record<ButtonVariant, string> = {
 
 export function Button({
   href,
+  onClick,
   children,
   variant = "primary",
   className = "",
 }: ButtonProps) {
+  const classes = `inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-[14px] font-bold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 ${variantClasses[variant]} ${className}`;
+  const arrow = (
+    <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+      <path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+
+  if (href) {
+    return (
+      <Link href={href} className={classes}>
+        {children}
+        {arrow}
+      </Link>
+    );
+  }
+
   return (
-    <Link
-      href={href}
-      className={`inline-flex items-center justify-center gap-2 rounded-xl px-6 py-3.5 text-[14px] font-bold transition-all duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-3 ${variantClasses[variant]} ${className}`}
-    >
+    <button type="button" onClick={onClick} className={classes}>
       {children}
-      <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-        <path d="M4 10h11m-4-4 4 4-4 4" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    </Link>
+      {arrow}
+    </button>
   );
 }

@@ -12,12 +12,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/kitchen-remodeling",
     "/about",
     "/contact",
+    "/privacy",
   ];
 
   return routes.map((route) => ({
     url: `${siteConfig.url}${route}`,
     lastModified,
-    changeFrequency: "monthly",
-    priority: route === "" ? 1 : 0.8,
+    changeFrequency: route === "/privacy" ? "yearly" : "monthly",
+    priority: route === "" ? 1 : route === "/privacy" ? 0.3 : 0.8,
   }));
 }

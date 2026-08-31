@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { sendLeadEmail } from "@/lib/mail";
+import { pushLeadToCrm } from "@/lib/crm";
 
 const TEXT_FIELDS = [
   "name",
@@ -41,6 +42,15 @@ export async function POST(request: Request) {
   } catch (error) {
     console.error("Failed to send lead email", error);
     return NextResponse.json({ error: "Could not send your request. Please call or email us directly." }, { status: 502 });
+  }
+
+  // Best-effort: the CRM sync is a convenience, not the record of truth —
+  // the email above already has everything, so a CRM hiccup shouldn't fail
+  // a customer's submission.
+  try {
+    await pushLeadToCrm(fields);
+  } catch (error) {
+    console.error("Failed to push lead to CRM", error);
   }
 
   return NextResponse.json({ ok: true });

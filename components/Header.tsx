@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Container } from "./Container";
 import { Logo } from "./Logo";
-import { Button } from "./Button";
+import { QuoteCTAButton } from "./QuoteCTAButton";
 import { siteConfig } from "@/lib/siteConfig";
 import { trackConversion } from "@/lib/analytics";
 
@@ -32,10 +32,10 @@ export function Header() {
               <span className="block font-display uppercase tracking-[0.14em]">Call the team</span>
               <span className="mt-0.5 block text-sm font-semibold text-white">{siteConfig.contact.phone}</span>
             </a>
-            <Button href="/contact" variant="white" className="whitespace-nowrap px-4 py-2.5 sm:px-5">
+            <QuoteCTAButton variant="white" className="whitespace-nowrap px-4 py-2.5 sm:px-5">
               <span className="sm:hidden">Free Quote</span>
               <span className="hidden sm:inline">Plan My Remodel</span>
-            </Button>
+            </QuoteCTAButton>
           </div>
         </div>
         <nav aria-label="Primary" className="no-scrollbar flex items-center gap-1 overflow-x-auto">

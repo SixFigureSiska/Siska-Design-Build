@@ -5,6 +5,8 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { LocalBusinessJsonLd } from "@/components/LocalBusinessJsonLd";
+import { ContactModalProvider } from "@/components/ContactModalContext";
+import { ContactModal } from "@/components/ContactModal";
 import { siteConfig } from "@/lib/siteConfig";
 
 const jost = Jost({
@@ -56,9 +58,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col bg-paper font-sans text-ink antialiased">
         <LocalBusinessJsonLd />
         <GoogleAnalytics />
-        <Header />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ContactModalProvider>
+          <Header />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <ContactModal />
+        </ContactModalProvider>
       </body>
     </html>
   );
