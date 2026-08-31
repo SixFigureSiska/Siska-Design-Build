@@ -51,7 +51,7 @@ export async function sendLeadEmail({ fields, photos }: ContactLead) {
   }
 
   const { error } = await resend.emails.send({
-    from: `${siteConfig.name} Website <onboarding@resend.dev>`,
+    from: `${siteConfig.name} Website <leads@siskadesignbuild.com>`,
     to: siteConfig.contact.email,
     replyTo: fields.email || undefined,
     subject: `New lead: ${fields.name || "Website contact form"}`,
