@@ -8,7 +8,6 @@ const TEXT_FIELDS = [
   "projectLocation",
   "projectType",
   "desiredStartDate",
-  "investmentRange",
   "leadSource",
   "message",
 ];

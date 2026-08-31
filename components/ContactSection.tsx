@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import Link from "next/link";
 import { Container } from "./Container";
 import { siteConfig } from "@/lib/siteConfig";
 import { trackConversion } from "@/lib/analytics";
@@ -30,7 +31,6 @@ export function ContactSection() {
 
       trackConversion("generate_lead", {
         project_type: String(formData.get("projectType") || "not_selected"),
-        investment_range: String(formData.get("investmentRange") || "not_selected"),
         lead_source: String(formData.get("leadSource") || "not_selected"),
       });
       setSubmitted(true);
@@ -65,14 +65,11 @@ export function ContactSection() {
                 <Field label="Email" id="email" name="email" type="email" autoComplete="email" required />
                 <Field label="Project Address or ZIP Code" id="projectLocation" name="projectLocation" autoComplete="street-address" placeholder="Malta, NY 12020" required />
                 <label htmlFor="projectType" className="grid gap-2"><span className="text-xs font-semibold text-ink">Project Type</span><select id="projectType" name="projectType" required defaultValue="" className="rounded-xl border border-line bg-paper px-4 py-3 text-sm text-ink focus:border-accent"><option value="" disabled>Select a project type</option><option value="bathroom">Bathroom Remodel</option><option value="kitchen">Kitchen Remodel</option><option value="both">Bathroom + Kitchen</option><option value="custom">Custom Interior Project</option></select></label>
-                <div className="grid gap-5 sm:grid-cols-2">
-                  <Field label="Desired Start Date" id="desiredStartDate" name="desiredStartDate" type="date" required />
-                  <label htmlFor="investmentRange" className="grid gap-2"><span className="text-xs font-semibold text-ink">Approximate Investment</span><select id="investmentRange" name="investmentRange" required defaultValue="" className="rounded-xl border border-line bg-paper px-4 py-3 text-sm text-ink focus:border-accent"><option value="" disabled>Select a range</option><option value="under-25k">Under $25,000</option><option value="25k-50k">$25,000–$50,000</option><option value="50k-100k">$50,000–$100,000</option><option value="100k-plus">$100,000+</option><option value="guidance">I need guidance</option></select></label>
-                </div>
+                <Field label="Desired Start Date" id="desiredStartDate" name="desiredStartDate" type="date" required />
                 <label htmlFor="projectPhotos" className="grid gap-2"><span className="text-xs font-semibold text-ink">Project Photos <span className="font-normal text-muted">(optional)</span></span><span className="rounded-xl border border-dashed border-accent/35 bg-navy-soft/30 px-4 py-4"><input id="projectPhotos" name="projectPhotos" type="file" accept="image/jpeg,image/png,image/webp" multiple className="block w-full text-xs text-muted file:mr-4 file:rounded-lg file:border-0 file:bg-navy file:px-4 file:py-2.5 file:text-xs file:font-bold file:text-white hover:file:bg-accent" /><span className="mt-2 block text-[11px] leading-4 text-muted">Add photos that show the room, layout, or problem areas. JPG, PNG, or WebP.</span></span></label>
                 <label htmlFor="leadSource" className="grid gap-2"><span className="text-xs font-semibold text-ink">How did you hear about SISKA?</span><select id="leadSource" name="leadSource" required defaultValue="" className="rounded-xl border border-line bg-paper px-4 py-3 text-sm text-ink focus:border-accent"><option value="" disabled>Select one</option><option value="google">Google search</option><option value="referral">Friend or client referral</option><option value="social">Social media</option><option value="sign-vehicle">Jobsite sign or vehicle</option><option value="other">Other</option></select></label>
                 <label htmlFor="message" className="grid gap-2"><span className="text-xs font-semibold text-ink">Project Details</span><textarea id="message" name="message" rows={5} placeholder="What would you like to change? Include the room, your goals, and any timing you have in mind." className="rounded-xl border border-line bg-paper px-4 py-3 text-sm text-ink placeholder:text-muted/65 focus:border-accent" /></label>
-                <label className="flex items-start gap-3 text-xs leading-5 text-muted"><input type="checkbox" name="consent" required className="mt-1 accent-accent" />I agree to be contacted about this renovation request.</label>
+                <label className="flex items-start gap-3 text-xs leading-5 text-muted"><input type="checkbox" name="consent" required className="mt-1 accent-accent" /><span>I agree to be contacted about this renovation request and acknowledge the <Link href="/privacy" className="font-semibold text-accent underline underline-offset-4">Privacy Policy</Link>.</span></label>
                 {error && <p className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>}
                 <button type="submit" disabled={submitting} className="mt-1 inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3.5 text-sm font-bold text-white shadow-[0_10px_25px_rgba(7,27,45,0.18)] transition hover:-translate-y-0.5 hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-60">{submitting ? "Sending…" : "Request My Free Consultation"}</button>
                 <p className="text-center text-[11px] text-muted">No obligation. Your information is only used to follow up about your project.</p>

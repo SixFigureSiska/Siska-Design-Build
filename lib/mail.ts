@@ -11,7 +11,6 @@ const FIELD_LABELS: Record<string, string> = {
   projectLocation: "Project Address / ZIP",
   projectType: "Project Type",
   desiredStartDate: "Desired Start Date",
-  investmentRange: "Approximate Investment",
   leadSource: "How They Heard About Us",
   message: "Project Details",
 };
