@@ -18,8 +18,16 @@ const SECURITY_HEADERS = [
     // inline <script> an attacker managed to get into the page some other
     // way, and no such injection point exists here (no user input is
     // rendered as raw HTML anywhere in this app).
+    // script-src also allow-lists the two ad/analytics tag loaders
+    // (Google's gtag.js and Meta's fbevents.js) by exact origin, and
+    // connect-src allow-lists the origins those two scripts report events
+    // to — everything else is still restricted to 'self'.
     value:
-      "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; " +
+      "default-src 'self'; " +
+      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://connect.facebook.net; " +
+      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://*.google-analytics.com https://www.facebook.com; " +
+      "frame-src https://www.facebook.com; " +
+      "style-src 'self' 'unsafe-inline'; " +
       "font-src 'self'; img-src 'self' data: https:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'",
   },
 ];

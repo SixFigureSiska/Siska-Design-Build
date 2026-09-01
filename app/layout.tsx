@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { MetaPixel } from "@/components/MetaPixel";
 import { LocalBusinessJsonLd } from "@/components/LocalBusinessJsonLd";
 import { ContactModalProvider } from "@/components/ContactModalContext";
 import { ContactModal } from "@/components/ContactModal";
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-full flex-col bg-paper font-sans text-ink antialiased">
         <LocalBusinessJsonLd />
         <GoogleAnalytics />
+        <MetaPixel />
         <ContactModalProvider>
           <Header />
           <main className="flex-1">{children}</main>
