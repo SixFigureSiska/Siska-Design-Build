@@ -40,7 +40,7 @@ const STEPS = [
     eyebrow: "Step 2 of 3",
     title: "What are we building?",
     subtitle: "Where the project is, and what you're picturing.",
-    required: ["projectLocation", "projectType", "desiredStartDate"] as (keyof Values)[],
+    required: ["projectLocation", "projectType"] as (keyof Values)[],
   },
   {
     eyebrow: "Step 3 of 3",
@@ -61,6 +61,7 @@ export function QuickQuoteFlow({
   const [direction, setDirection] = useState<"forward" | "back">("forward");
   const [values, setValues] = useState<Values>(INITIAL_VALUES);
   const [photos, setPhotos] = useState<File[]>([]);
+  const [honeypot, setHoneypot] = useState("");
   const [touched, setTouched] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -105,6 +106,7 @@ export function QuickQuoteFlow({
     setError(null);
 
     const formData = new FormData();
+    formData.set("company", honeypot);
     formData.set("name", values.name);
     formData.set("phone", values.phone);
     formData.set("email", values.email);
@@ -197,6 +199,16 @@ export function QuickQuoteFlow({
         ))}
       </div>
 
+      {/* Honeypot — invisible to real visitors, but a naive bot filling
+          every input it finds will populate this and get silently
+          rejected server-side. Present on every step, not just one. */}
+      <div className="absolute -left-[9999px] top-auto h-0 w-0 overflow-hidden" aria-hidden="true">
+        <label>
+          Company
+          <input type="text" name="company" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
+        </label>
+      </div>
+
       <div key={step} className={`mt-7 ${animClass}`}>
         <p className="font-display text-[11px] font-bold uppercase tracking-[0.18em] text-accent">{current.eyebrow}</p>
         <h2 className="mt-2 font-display text-[28px] font-medium leading-[1.1] text-ink sm:text-[34px]">{current.title}</h2>
@@ -237,7 +249,7 @@ export function QuickQuoteFlow({
                 ]}
               />
               <Field
-                label="Desired Start Date"
+                label="Desired Start Date (optional)"
                 type="date"
                 value={values.desiredStartDate}
                 onChange={(v) => set("desiredStartDate", v)}

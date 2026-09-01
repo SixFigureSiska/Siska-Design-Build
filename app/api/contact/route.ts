@@ -29,6 +29,14 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Invalid form submission" }, { status: 400 });
   }
 
+  // Honeypot: a field real visitors never see or fill in (hidden off-screen
+  // in the form), but a basic bot that auto-fills every input will. Report
+  // success without actually sending anything, so the bot doesn't learn to
+  // adjust and retry.
+  if (formData.get("company")) {
+    return NextResponse.json({ ok: true });
+  }
+
   if (!formData.get("consent")) {
     return NextResponse.json({ error: "Consent is required" }, { status: 400 });
   }
