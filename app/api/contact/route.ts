@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { sendLeadEmail } from "@/lib/mail";
 import { pushLeadToCrm } from "@/lib/crm";
+import { checkLimit, clientIp } from "@/lib/rateLimit";
 
 const TEXT_FIELDS = [
   "name",
@@ -14,6 +15,13 @@ const TEXT_FIELDS = [
 ];
 
 export async function POST(request: Request) {
+  if (!checkLimit(`contact:${clientIp(request)}`, 5, 60 * 60 * 1000)) {
+    return NextResponse.json(
+      { error: "Too many requests — please try again later." },
+      { status: 429, headers: { "Retry-After": "3600" } }
+    );
+  }
+
   let formData: FormData;
   try {
     formData = await request.formData();
