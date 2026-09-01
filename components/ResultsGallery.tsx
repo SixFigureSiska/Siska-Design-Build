@@ -19,7 +19,7 @@ const projects: { room: Room; scope: string; location: string; image: string }[]
     room: "Kitchen",
     scope: "Full gut renovation — layout, cabinetry & appliances",
     location: "Upstate New York concept",
-    image: "/photos/upstate/work-kitchen-3.png",
+    image: "/photos/upstate/work-kitchen-3.jpg",
   },
 ];
 
