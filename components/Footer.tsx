@@ -21,7 +21,7 @@ export function Footer() {
           <FooterColumn title="Services">
             <Link href="/bathroom-remodeling" className="hover:text-white">Bathrooms</Link>
             <Link href="/kitchen-remodeling" className="hover:text-white">Kitchens</Link>
-            <Link href="/services#custom" className="hover:text-white">Custom Projects</Link>
+            <Link href="/general-contracting" className="hover:text-white">Custom Projects</Link>
           </FooterColumn>
           <FooterColumn title="Start a Project">
             <a href={siteConfig.contact.phoneHref} className="font-semibold text-white hover:text-[#c8dae5]">Call the team: {siteConfig.contact.phone}</a>

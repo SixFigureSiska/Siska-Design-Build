@@ -59,7 +59,7 @@ export function LocalBusinessJsonLd() {
           itemOffered: {
             "@type": "Service",
             name: "Custom Interior Remodeling",
-            url: `${siteConfig.url}/services`,
+            url: `${siteConfig.url}/general-contracting`,
           },
         },
         {
@@ -75,7 +75,7 @@ export function LocalBusinessJsonLd() {
           itemOffered: {
             "@type": "Service",
             name: "General Contracting",
-            url: `${siteConfig.url}/services`,
+            url: `${siteConfig.url}/general-contracting`,
           },
         },
       ],

@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/bathroom-remodeling",
     "/kitchen-remodeling",
+    "/general-contracting",
     "/about",
     "/contact",
     "/privacy",
