@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { FAQ } from "@/components/FAQ";
+import { FAQJsonLd } from "@/components/FAQJsonLd";
 import { FinalCTA } from "@/components/FinalCTA";
 import { LocalServicePage } from "@/components/LocalServicePage";
 import { PageHeader } from "@/components/PageHeader";
@@ -61,6 +62,7 @@ export default function BathroomRemodelingPage() {
         ]}
       />
       <FAQ title="Bathroom remodeling questions." items={faqItems} />
+      <FAQJsonLd items={faqItems} />
       <FinalCTA />
     </>
   );

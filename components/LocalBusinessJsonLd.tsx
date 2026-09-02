@@ -10,6 +10,15 @@ export function LocalBusinessJsonLd() {
     "@type": "GeneralContractor",
     "@id": `${siteConfig.url}/#business`,
     name: siteConfig.name,
+    alternateName: [
+      "Siska Design and Build",
+      "Siska Design & Build",
+      "Siska Construction",
+      "Siska Builders",
+      "Siska Build",
+      "Siska Design",
+      "Siska Tile",
+    ],
     url: siteConfig.url,
     image: `${siteConfig.url}/photos/upstate/hero-bathroom-v2.png`,
     description: siteConfig.description,
@@ -50,6 +59,22 @@ export function LocalBusinessJsonLd() {
           itemOffered: {
             "@type": "Service",
             name: "Custom Interior Remodeling",
+            url: `${siteConfig.url}/services`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Tile Installation",
+            url: `${siteConfig.url}/services`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "General Contracting",
             url: `${siteConfig.url}/services`,
           },
         },

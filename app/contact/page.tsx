@@ -5,9 +5,10 @@ import { QuickQuoteFlow } from "@/components/QuickQuoteFlow";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: `Contact | ${siteConfig.name}`,
+  title: `Contact | Free Remodeling Quote in Saratoga, NY | ${siteConfig.name}`,
   description:
-    "Request a free, no-obligation consultation with Siska Design + Build for your bathroom or kitchen renovation.",
+    "Request a free, no-obligation consultation with Siska Design + Build for your bathroom or kitchen renovation in Saratoga, Malta, or the Capital Region.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

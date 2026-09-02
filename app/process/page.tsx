@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { FAQ } from "@/components/FAQ";
+import { FAQJsonLd } from "@/components/FAQJsonLd";
 import { FinalCTA } from "@/components/FinalCTA";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: `Our Process | ${siteConfig.name}`,
+  title: `Our Renovation Process | ${siteConfig.name}`,
   description:
-    "How a Siska Design + Build renovation actually works, from your first consultation to final walkthrough.",
+    "How a Siska Design + Build renovation actually works, from your first consultation to final walkthrough — serving Saratoga, Malta, and the Capital Region.",
+  alternates: { canonical: "/process" },
 };
 
 const faqItems = [
@@ -44,6 +46,7 @@ export default function ProcessPage() {
       />
       <ProcessSteps />
       <FAQ title="What to expect along the way." items={faqItems} />
+      <FAQJsonLd items={faqItems} />
       <FinalCTA />
     </>
   );

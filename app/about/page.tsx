@@ -6,8 +6,10 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: `About | ${siteConfig.name}`,
-  description: "The practical, transparent approach behind Siska Design + Build's bathroom, kitchen, and custom interior remodeling.",
+  title: `About Siska Design + Build | Malta, NY Remodeling Contractor`,
+  description:
+    "The practical, transparent approach behind Siska Design + Build's bathroom, kitchen, and custom interior remodeling — based in Malta, NY, serving Saratoga and the Capital Region.",
+  alternates: { canonical: "/about" },
 };
 
 const values = [

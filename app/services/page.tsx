@@ -2,13 +2,15 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/PageHeader";
 import { Services } from "@/components/Services";
 import { FAQ } from "@/components/FAQ";
+import { FAQJsonLd } from "@/components/FAQJsonLd";
 import { FinalCTA } from "@/components/FinalCTA";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: `Services | ${siteConfig.name}`,
+  title: `Remodeling & General Contractor Services in Saratoga, NY | ${siteConfig.name}`,
   description:
-    "Bathroom and kitchen remodeling services from Siska Design + Build — full gut renovations to focused refreshes.",
+    "Bathroom remodeling, kitchen remodeling, tile, and general contracting services from Siska Design + Build, serving Saratoga, Malta, and the Capital Region — full gut renovations to focused refreshes.",
+  alternates: { canonical: "/services" },
 };
 
 const faqItems = [
@@ -44,6 +46,7 @@ export default function ServicesPage() {
       />
       <Services />
       <FAQ title="What shapes a Siska quote." items={faqItems} />
+      <FAQJsonLd items={faqItems} />
       <FinalCTA />
     </>
   );

@@ -35,6 +35,13 @@ export const metadata: Metadata = {
     "remodeling contractor Malta NY",
     "Capital Region remodeling contractor",
     "Lake George bathroom remodeling",
+    "Saratoga bathroom renovators",
+    "kitchen remodeler in Saratoga",
+    "general contractor Malta NY",
+    "Siska Design + Build",
+    "Siska Design and Build",
+    "Siska Construction",
+    "Siska Builders",
   ],
   ...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
     ? {
@@ -50,6 +57,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     url: siteConfig.url,
     locale: "en_US",
+    images: [
+      {
+        url: "/photos/upstate/hero-bathroom-v2.png",
+        width: 1200,
+        height: 630,
+        alt: "Bathroom remodel by Siska Design + Build in Malta, NY",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} | Bathroom & Kitchen Remodeling`,
+    description: siteConfig.description,
+    images: ["/photos/upstate/hero-bathroom-v2.png"],
   },
 };
 

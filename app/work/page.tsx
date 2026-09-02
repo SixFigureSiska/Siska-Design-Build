@@ -5,9 +5,10 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { siteConfig } from "@/lib/siteConfig";
 
 export const metadata: Metadata = {
-  title: `Our Work | ${siteConfig.name}`,
+  title: `Bathroom & Kitchen Remodel Photos | Saratoga, NY | ${siteConfig.name}`,
   description:
-    "Browse bathroom and kitchen renovation concepts from Siska Design + Build, including before/after comparisons.",
+    "Browse bathroom and kitchen renovation concepts from Siska Design + Build, including before/after comparisons — serving Saratoga, Malta, and the Capital Region.",
+  alternates: { canonical: "/work" },
 };
 
 export default function WorkPage() {
