@@ -32,7 +32,7 @@ export function Header() {
               <span className="block font-display uppercase tracking-[0.14em]">Call the team</span>
               <span className="mt-0.5 block text-sm font-semibold text-white">{siteConfig.contact.phone}</span>
             </a>
-            <QuoteCTAButton variant="white" className="whitespace-nowrap px-4 py-2.5 sm:px-5">
+            <QuoteCTAButton variant="primary" className="whitespace-nowrap px-4 py-2.5 sm:px-5">
               <span className="sm:hidden">Free Quote</span>
               <span className="hidden sm:inline">Plan My Remodel</span>
             </QuoteCTAButton>

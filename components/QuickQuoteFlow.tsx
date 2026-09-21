@@ -151,7 +151,7 @@ export function QuickQuoteFlow({
             target={siteConfig.contact.schedulingUrl.startsWith("http") ? "_blank" : undefined}
             rel={siteConfig.contact.schedulingUrl.startsWith("http") ? "noopener noreferrer" : undefined}
             onClick={() => trackConversion("schedule_call")}
-            className="inline-flex items-center justify-center rounded-xl bg-accent px-6 py-3.5 text-sm font-bold text-white shadow-[0_10px_25px_rgba(7,27,45,0.18)] transition hover:-translate-y-0.5 hover:bg-accent-dark"
+            className="inline-flex items-center justify-center rounded-xl bg-cta px-6 py-3.5 text-sm font-bold text-navy-deep shadow-[0_10px_25px_rgba(7,27,45,0.18)] transition hover:-translate-y-0.5 hover:bg-cta-dark"
           >
             Schedule a Call
           </a>
@@ -334,7 +334,7 @@ export function QuickQuoteFlow({
             <button
               type="button"
               onClick={goNext}
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-bold text-white shadow-[0_10px_25px_rgba(7,27,45,0.18)] transition hover:-translate-y-0.5 hover:bg-accent-dark"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-7 py-3.5 text-sm font-bold text-navy-deep shadow-[0_10px_25px_rgba(7,27,45,0.18)] transition hover:-translate-y-0.5 hover:bg-cta-dark"
             >
               Continue
               <svg className="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
@@ -346,7 +346,7 @@ export function QuickQuoteFlow({
               type="button"
               onClick={handleSubmit}
               disabled={submitting}
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-7 py-3.5 text-sm font-bold text-white shadow-[0_10px_25px_rgba(7,27,45,0.18)] transition hover:-translate-y-0.5 hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-60"
+              className="inline-flex items-center justify-center gap-2 rounded-xl bg-cta px-7 py-3.5 text-sm font-bold text-navy-deep shadow-[0_10px_25px_rgba(7,27,45,0.18)] transition hover:-translate-y-0.5 hover:bg-cta-dark disabled:cursor-not-allowed disabled:opacity-60"
             >
               {submitting ? "Sending…" : "Get My Free Quote"}
             </button>

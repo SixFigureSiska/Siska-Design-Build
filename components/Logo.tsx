@@ -26,7 +26,7 @@ export function Logo({ variant = "onLight", size = "md", className = "" }: LogoP
       <span
         className={`ml-2.5 border-l pl-2.5 font-display text-[10px] font-medium uppercase leading-none tracking-[0.18em] ${divider} ${tag}`}
       >
-        Design + Build
+        Design <span className="text-cta">+</span> Build
       </span>
     </div>
   );

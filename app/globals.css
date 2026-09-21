@@ -12,6 +12,9 @@
   --navy-deep: #071b2d;
   --navy-soft: #dfe9ef;
   --cream: #f3efe7;
+  /* Brand orange — call-to-action buttons only. Pair with navy text (white is ~2:1). */
+  --cta: #ff9b5f;
+  --cta-dark: #f2843f;
 }
 
 .privacy-copy ul {
@@ -42,6 +45,8 @@
   --color-navy-deep: var(--navy-deep);
   --color-navy-soft: var(--navy-soft);
   --color-cream: var(--cream);
+  --color-cta: var(--cta);
+  --color-cta-dark: var(--cta-dark);
 
   --font-display: var(--font-jost);
   --font-sans: var(--font-inter);

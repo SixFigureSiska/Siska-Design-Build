@@ -21,6 +21,7 @@ export function LocalBusinessJsonLd() {
     ],
     url: siteConfig.url,
     image: `${siteConfig.url}/photos/upstate/hero-bathroom-v2.png`,
+    logo: `${siteConfig.url}/siska-design-build-logo-transparent.png`,
     description: siteConfig.description,
     telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,

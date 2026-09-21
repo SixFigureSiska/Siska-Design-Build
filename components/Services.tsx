@@ -20,14 +20,23 @@ export function Services() {
   // Deep links like /services#custom (used by the footer) should select
   // that tab and scroll to it, not just land on the default first tab.
   useEffect(() => {
-    const hash = window.location.hash.replace("#", "");
-    const match = services.find((item) => item.id === hash);
-    if (match) {
-      setActive(match.id);
-      requestAnimationFrame(() => {
-        document.getElementById(match.id)?.scrollIntoView({ block: "start" });
-      });
-    }
+    const syncFromHash = () => {
+      const hash = window.location.hash.replace("#", "");
+      const match = services.find((item) => item.id === hash);
+      if (match) {
+        setActive(match.id);
+        requestAnimationFrame(() => {
+          document.getElementById(match.id)?.scrollIntoView({ block: "start" });
+        });
+      }
+    };
+    // Deferred to a timer so state is set from a callback, not synchronously in the effect.
+    const timer = setTimeout(syncFromHash, 0);
+    window.addEventListener("hashchange", syncFromHash);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("hashchange", syncFromHash);
+    };
   }, []);
 
   return (
