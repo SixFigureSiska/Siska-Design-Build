@@ -5,7 +5,7 @@ import { useContactModal } from "./ContactModalContext";
 import { QuickQuoteFlow } from "./QuickQuoteFlow";
 
 export function ContactModal() {
-  const { isOpen, close } = useContactModal();
+  const { isOpen, campaign, close } = useContactModal();
 
   useEffect(() => {
     if (!isOpen) return;
@@ -41,7 +41,7 @@ export function ContactModal() {
             <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
           </svg>
         </button>
-        <QuickQuoteFlow variant="modal" onClose={close} />
+        <QuickQuoteFlow variant="modal" onClose={close} campaign={campaign} />
       </div>
     </div>
   );

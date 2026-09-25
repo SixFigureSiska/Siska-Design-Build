@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/bathroom-remodeling",
     "/kitchen-remodeling",
     "/general-contracting",
+    "/wetwall-showers",
     "/about",
     "/contact",
     "/privacy",

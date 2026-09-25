@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/siteConfig";
 import { trackConversion } from "@/lib/analytics";
+import type { QuoteCampaign } from "./ContactModalContext";
 
 type Values = {
   name: string;
@@ -53,13 +54,18 @@ const STEPS = [
 export function QuickQuoteFlow({
   variant = "page",
   onClose,
+  campaign,
 }: {
   variant?: "page" | "modal";
   onClose?: () => void;
+  campaign?: QuoteCampaign | null;
 }) {
   const [step, setStep] = useState(0);
   const [direction, setDirection] = useState<"forward" | "back">("forward");
-  const [values, setValues] = useState<Values>(INITIAL_VALUES);
+  const [values, setValues] = useState<Values>(() => ({
+    ...INITIAL_VALUES,
+    projectType: campaign?.projectType ?? "",
+  }));
   const [photos, setPhotos] = useState<File[]>([]);
   const [honeypot, setHoneypot] = useState("");
   const [touched, setTouched] = useState(false);
@@ -114,7 +120,12 @@ export function QuickQuoteFlow({
     formData.set("projectType", values.projectType);
     formData.set("desiredStartDate", values.desiredStartDate);
     formData.set("leadSource", values.leadSource);
-    formData.set("message", values.message);
+    // Campaign leads get tagged in the message so the tag shows up in both
+    // the lead email and the CRM without a separate field on either side.
+    formData.set(
+      "message",
+      campaign ? `[Campaign: ${campaign.label}]${values.message ? `\n\n${values.message}` : ""}` : values.message,
+    );
     formData.set("consent", "on");
     photos.forEach((file) => formData.append("projectPhotos", file));
 
@@ -127,6 +138,7 @@ export function QuickQuoteFlow({
       trackConversion("generate_lead", {
         project_type: values.projectType || "not_selected",
         lead_source: values.leadSource || "not_selected",
+        ...(campaign ? { campaign: campaign.label } : {}),
       });
       setSubmitted(true);
     } catch {
