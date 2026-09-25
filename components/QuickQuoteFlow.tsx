@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import { siteConfig } from "@/lib/siteConfig";
 import { trackConversion } from "@/lib/analytics";
+import { getLeadSource } from "@/lib/adSource";
 import type { QuoteCampaign } from "./ContactModalContext";
 
 type Values = {
@@ -94,6 +95,14 @@ export function QuickQuoteFlow({
     }
     setTouched(false);
     setDirection("forward");
+    // Entering the last step: visitors who came from an ad already told us
+    // how they heard about SISKA, so answer that question for them (still
+    // editable). Done here rather than in initial state so the server- and
+    // client-rendered form on /contact match.
+    if (step === STEPS.length - 2 && !values.leadSource) {
+      const source = getLeadSource();
+      if (source) set("leadSource", source);
+    }
     setStep((s) => Math.min(s + 1, STEPS.length - 1));
   }
 

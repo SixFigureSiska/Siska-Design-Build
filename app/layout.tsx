@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { MetaPixel } from "@/components/MetaPixel";
+import { AdSourceCapture } from "@/components/AdSourceCapture";
 import { LocalBusinessJsonLd } from "@/components/LocalBusinessJsonLd";
 import { ContactModalProvider } from "@/components/ContactModalContext";
 import { ContactModal } from "@/components/ContactModal";
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <LocalBusinessJsonLd />
         <GoogleAnalytics />
         <MetaPixel />
+        <AdSourceCapture />
         <ContactModalProvider>
           <Header />
           <main className="flex-1">{children}</main>
