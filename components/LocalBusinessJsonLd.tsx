@@ -59,6 +59,14 @@ export function LocalBusinessJsonLd() {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
+            name: "Masonry and Stonework",
+            url: `${siteConfig.url}/masonry-stonework`,
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
             name: "Custom Interior Remodeling",
             url: `${siteConfig.url}/general-contracting`,
           },

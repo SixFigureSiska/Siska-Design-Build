@@ -4,11 +4,14 @@ import { pushLeadToCrm } from "@/lib/crm";
 import { checkLimit, clientIp } from "@/lib/rateLimit";
 
 const TEXT_FIELDS = [
+  "inquiryType",
+  "company",
   "name",
   "phone",
   "email",
   "projectLocation",
   "projectType",
+  "projectScope",
   "desiredStartDate",
   "leadSource",
   "message",
@@ -33,7 +36,7 @@ export async function POST(request: Request) {
   // in the form), but a basic bot that auto-fills every input will. Report
   // success without actually sending anything, so the bot doesn't learn to
   // adjust and retry.
-  if (formData.get("company")) {
+  if (formData.get("website")) {
     return NextResponse.json({ ok: true });
   }
 

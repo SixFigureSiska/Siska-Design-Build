@@ -43,12 +43,13 @@ export default function GeneralContractingPage() {
         serviceName="General Contracting"
         image="/photos/upstate/service-custom.jpg"
         imageAlt="Custom built-in storage project by a Malta, NY general contractor"
-        introduction="Siska Design + Build takes on interior renovation and general contracting work that doesn't fit neatly into a bathroom or kitchen remodel — basement finishes, mudrooms, laundry rooms, built-ins, and multi-room projects, all handled by one design + build team."
+        introduction="Siska Design + Build takes on renovation and general contracting work that doesn't fit neatly into a bathroom or kitchen remodel — basement finishes, mudrooms, laundry rooms, built-ins, masonry and stonework coordination, and multi-part projects."
         localContext="Homes across Saratoga County, the Capital Region, and the Lake George area vary widely in age, layout, and construction. We plan around those existing conditions so structural, plumbing, electrical, and finish work come together as one coordinated project — not a patchwork of separate trades."
         includes={[
           "Basement and bonus-room renovations",
           "Mudrooms and laundry rooms",
           "Built-ins and custom storage",
+          "Masonry and stonework coordination",
           "Multi-room interior updates",
           "Structural, plumbing, and electrical coordination",
           "Transparent, scope-driven quotes",

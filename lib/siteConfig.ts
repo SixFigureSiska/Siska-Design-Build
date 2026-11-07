@@ -5,7 +5,7 @@ export const siteConfig = {
   shortName: "Siska",
   tagline: "Design + Build",
   description:
-    "Bathroom and kitchen remodeling with transparent, measurement-driven pricing. See your new space before you commit.",
+    "Bathroom and kitchen remodeling, masonry, stonework, and custom projects with transparent, scope-driven pricing.",
 
   // TODO: replace with the real production domain before launch (used for
   // the sitemap and robots.txt).
@@ -47,6 +47,7 @@ export const siteConfig = {
     { label: "Work", href: "/work" },
     { label: "Process", href: "/process" },
     { label: "Services", href: "/services" },
+    { label: "For Builders", href: "/builders" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
   ],

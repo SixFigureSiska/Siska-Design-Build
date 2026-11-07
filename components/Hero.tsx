@@ -15,7 +15,7 @@ export function Hero() {
               Remodel with a clear plan—and no surprise pricing.
             </h1>
             <p className="mt-6 max-w-xl text-[16px] leading-7 text-white/68 sm:text-[17px]">
-              Bathrooms, kitchens, and custom interiors planned around your home, visualized before construction, and quoted with the scope clearly spelled out.
+              Bathrooms, kitchens, masonry, stonework, and custom projects planned around your property and quoted with the scope clearly spelled out.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <QuoteCTAButton variant="primary" className="sm:px-7">Plan My Remodel</QuoteCTAButton>

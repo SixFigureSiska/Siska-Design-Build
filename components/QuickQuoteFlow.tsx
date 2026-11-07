@@ -121,7 +121,8 @@ export function QuickQuoteFlow({
     setError(null);
 
     const formData = new FormData();
-    formData.set("company", honeypot);
+    formData.set("website", honeypot);
+    formData.set("inquiryType", "homeowner");
     formData.set("name", values.name);
     formData.set("phone", values.phone);
     formData.set("email", values.email);
@@ -266,6 +267,7 @@ export function QuickQuoteFlow({
                   { value: "bathroom", label: "Bathroom Remodel" },
                   { value: "kitchen", label: "Kitchen Remodel" },
                   { value: "both", label: "Bathroom + Kitchen" },
+                  { value: "masonry", label: "Masonry or Stonework" },
                   { value: "custom", label: "Custom Interior Project" },
                 ]}
               />

@@ -5,11 +5,14 @@ const MAX_ATTACHMENT_BYTES = 4 * 1024 * 1024;
 const MAX_ATTACHMENTS = 5;
 
 const FIELD_LABELS: Record<string, string> = {
+  inquiryType: "Inquiry Type",
+  company: "Company",
   name: "Full Name",
   phone: "Phone",
   email: "Email",
   projectLocation: "Project Address / ZIP",
   projectType: "Project Type",
+  projectScope: "Subcontracting Scope",
   desiredStartDate: "Desired Start Date",
   leadSource: "How They Heard About Us",
   message: "Project Details",
@@ -53,7 +56,9 @@ export async function sendLeadEmail({ fields, photos }: ContactLead) {
     from: `${siteConfig.name} Website <leads@siskadesignbuild.com>`,
     to: siteConfig.contact.email,
     replyTo: fields.email || undefined,
-    subject: `New lead: ${fields.name || "Website contact form"}`,
+    subject: fields.inquiryType === "builder"
+      ? `Builder subcontracting inquiry: ${fields.company || fields.name || "Website inquiry"}`
+      : `New lead: ${fields.name || "Website contact form"}`,
     html: `<table cellpadding="0" cellspacing="0">${rows}</table>`,
     attachments: attachments.length > 0 ? attachments : undefined,
   });

@@ -12,6 +12,7 @@ import { trackConversion } from "@/lib/analytics";
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const isBuilderPage = pathname === "/builders";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10);
@@ -32,10 +33,17 @@ export function Header() {
               <span className="block font-display uppercase tracking-[0.14em]">Call the team</span>
               <span className="mt-0.5 block text-sm font-semibold text-white">{siteConfig.contact.phone}</span>
             </a>
-            <QuoteCTAButton variant="primary" className="whitespace-nowrap px-4 py-2.5 sm:px-5">
-              <span className="sm:hidden">Free Quote</span>
-              <span className="hidden sm:inline">Plan My Remodel</span>
-            </QuoteCTAButton>
+            {isBuilderPage ? (
+              <Link href="#builder-inquiry" className="inline-flex whitespace-nowrap rounded-xl bg-cta px-4 py-2.5 text-sm font-bold text-navy-deep shadow-[0_10px_25px_rgba(7,27,45,0.18)] transition hover:-translate-y-0.5 hover:bg-cta-dark sm:px-5">
+                <span className="sm:hidden">Send Project</span>
+                <span className="hidden sm:inline">Send a Project</span>
+              </Link>
+            ) : (
+              <QuoteCTAButton variant="primary" className="whitespace-nowrap px-4 py-2.5 sm:px-5">
+                <span className="sm:hidden">Free Quote</span>
+                <span className="hidden sm:inline">Plan My Remodel</span>
+              </QuoteCTAButton>
+            )}
           </div>
         </div>
         <nav aria-label="Primary" className="no-scrollbar flex items-center gap-1 overflow-x-auto">

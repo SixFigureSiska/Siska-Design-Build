@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { Container } from "@/components/Container";
 import { QuickQuoteFlow } from "@/components/QuickQuoteFlow";
 import { siteConfig } from "@/lib/siteConfig";
@@ -7,7 +8,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: `Contact | Free Remodeling Quote in Saratoga, NY | ${siteConfig.name}`,
   description:
-    "Request a free, no-obligation consultation with Siska Design + Build for your bathroom or kitchen renovation in Saratoga, Malta, or the Capital Region.",
+    "Request a free consultation with Siska Design + Build for bathroom, kitchen, masonry, stonework, or custom projects in Saratoga, Malta, or the Capital Region.",
   alternates: { canonical: "/contact" },
 };
 
@@ -40,6 +41,10 @@ export default function ContactPage() {
           </div>
 
           <div className="p-6 sm:p-8 lg:p-12">
+            <Link href="/builders" className="mb-7 flex items-center justify-between gap-4 rounded-2xl border border-accent/25 bg-navy-soft/45 px-5 py-4 transition hover:border-accent/50 hover:bg-navy-soft/70">
+              <span><span className="block font-display text-[10px] font-bold uppercase tracking-[0.16em] text-accent">Builder or general contractor?</span><span className="mt-1 block text-sm font-semibold text-ink">Send a subcontracting inquiry instead.</span></span>
+              <span className="text-xl text-accent" aria-hidden="true">→</span>
+            </Link>
             <div className="mb-2 lg:hidden">
               <p className="font-display text-[11px] font-bold uppercase tracking-[0.18em] text-accent">Get In Touch</p>
             </div>

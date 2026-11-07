@@ -8,7 +8,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: `About Siska Design + Build | Malta, NY Remodeling Contractor`,
   description:
-    "The practical, transparent approach behind Siska Design + Build's bathroom, kitchen, and custom interior remodeling — based in Malta, NY, serving Saratoga and the Capital Region.",
+    "The practical, transparent approach behind Siska Design + Build's remodeling, masonry, stonework, and custom projects — based in Malta, NY, serving Saratoga and the Capital Region.",
   alternates: { canonical: "/about" },
 };
 
@@ -32,7 +32,7 @@ export default function AboutPage() {
               <div className="mt-6 space-y-5 text-[15px] leading-7 text-muted">
                 <p>Too many homeowners are asked to commit to vague scopes, loose allowances, and a finished room they cannot truly picture. Our company was built around a clearer way to renovate: understand the space, visualize the direction, and price the actual work before construction begins.</p>
                 <p>We are the new guys on the block—lean enough to offer sharp pricing and modern enough to use better planning tools. But tile lines, trim, cleanup, communication, and the final walkthrough still get the old-school attention they deserve.</p>
-                <p>Bathrooms and kitchens are our core work. We also consider custom interior projects where our design + build approach is a good fit.</p>
+                <p>Our work includes bathrooms, kitchens, masonry, stonework, and custom projects where clear planning and careful execution matter.</p>
               </div>
             </div>
             <div className="relative"><Photo src="/photos/upstate/work-kitchen-3.png" alt="Refined kitchen remodeling concept for an Upstate New York home" ratio="aspect-[4/5]" sizes="(min-width: 1024px) 45vw, 100vw" /><div className="absolute -bottom-5 -left-3 rounded-2xl bg-navy px-5 py-4 text-white shadow-xl sm:-left-6"><p className="font-display text-xs font-bold uppercase tracking-[0.15em] text-[#b7cbd8]">Our promise</p><p className="mt-1 max-w-[220px] text-sm font-semibold">Clarity before construction. Care through the finish.</p></div></div>

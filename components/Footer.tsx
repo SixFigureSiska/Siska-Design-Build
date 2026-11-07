@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid gap-10 border-b border-white/12 pb-12 md:grid-cols-[1.4fr_0.8fr_0.8fr_1fr]">
           <div>
             <Logo variant="onDark" size="md" />
-            <p className="mt-5 max-w-sm text-sm leading-6 text-white/60">Bathroom, kitchen, and custom interior remodeling with clear planning, thoughtful design, and workmanship that lasts.</p>
+            <p className="mt-5 max-w-sm text-sm leading-6 text-white/60">Bathroom, kitchen, masonry, stonework, and custom projects with clear planning and workmanship that lasts.</p>
             <p className="mt-5 text-xs font-bold uppercase tracking-[0.14em] text-[#a9c1d1]">{siteConfig.contact.serviceArea}</p>
             <p className="mt-2 text-xs text-white/45">{siteConfig.contact.basedIn}</p>
           </div>
@@ -21,12 +21,15 @@ export function Footer() {
           <FooterColumn title="Services">
             <Link href="/bathroom-remodeling" className="hover:text-white">Bathrooms</Link>
             <Link href="/kitchen-remodeling" className="hover:text-white">Kitchens</Link>
+            <Link href="/masonry-stonework" className="hover:text-white">Masonry &amp; Stonework</Link>
             <Link href="/general-contracting" className="hover:text-white">Custom Projects</Link>
+            <Link href="/builders" className="font-semibold text-white hover:text-[#c8dae5]">Subcontracting for Builders</Link>
           </FooterColumn>
           <FooterColumn title="Start a Project">
             <a href={siteConfig.contact.phoneHref} className="font-semibold text-white hover:text-[#c8dae5]">Call the team: {siteConfig.contact.phone}</a>
             <a href={`mailto:${siteConfig.contact.email}`} className="break-all hover:text-white">{siteConfig.contact.email}</a>
             <Link href="/contact" className="mt-2 inline-flex font-bold text-white underline decoration-[#89a9bd] underline-offset-4">Request a free consultation</Link>
+            <Link href="/builders" className="inline-flex font-bold text-[#c8dae5] underline decoration-[#89a9bd] underline-offset-4">Send a subcontracting inquiry</Link>
           </FooterColumn>
         </div>
         <div className="flex flex-col gap-3 pt-7 text-xs text-white/45 sm:flex-row sm:items-center sm:justify-between">

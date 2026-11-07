@@ -9,7 +9,7 @@ import { siteConfig } from "@/lib/siteConfig";
 export const metadata: Metadata = {
   title: `Remodeling & General Contractor Services in Saratoga, NY | ${siteConfig.name}`,
   description:
-    "Bathroom remodeling, kitchen remodeling, tile, and general contracting services from Siska Design + Build, serving Saratoga, Malta, and the Capital Region — full gut renovations to focused refreshes.",
+    "Bathroom remodeling, kitchen remodeling, masonry, stonework, and general contracting services from Siska Design + Build, serving Saratoga, Malta, and the Capital Region.",
   alternates: { canonical: "/services" },
 };
 
@@ -41,8 +41,8 @@ export default function ServicesPage() {
     <>
       <PageHeader
         label="Services"
-        title="Bathrooms, kitchens, and custom interiors—planned before they are built."
-        description="Choose a service tab to see what we handle. Every project gets the same clear design + build process and transparent, scope-driven quote."
+        title="Bathrooms, kitchens, masonry, stonework, and custom projects—planned before they are built."
+        description="Choose a service tab to see what we handle. Every project gets a clear scope, site-specific planning, and transparent quote."
       />
       <Services />
       <FAQ title="What shapes a Siska quote." items={faqItems} />

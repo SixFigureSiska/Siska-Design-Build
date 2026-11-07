@@ -25,7 +25,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: `${siteConfig.name} | Bathroom & Kitchen Remodeling`,
+  title: `${siteConfig.name} | Remodeling, Masonry & Stonework`,
   description: siteConfig.description,
   alternates: {
     canonical: "/",
@@ -39,6 +39,9 @@ export const metadata: Metadata = {
     "Saratoga bathroom renovators",
     "kitchen remodeler in Saratoga",
     "general contractor Malta NY",
+    "masonry contractor Saratoga NY",
+    "stonework Capital Region NY",
+    "stone veneer contractor Malta NY",
     "Siska Design + Build",
     "Siska Design and Build",
     "Siska Construction",
@@ -52,7 +55,7 @@ export const metadata: Metadata = {
       }
     : {}),
   openGraph: {
-    title: `${siteConfig.name} | Bathroom & Kitchen Remodeling`,
+    title: `${siteConfig.name} | Remodeling, Masonry & Stonework`,
     description: siteConfig.description,
     type: "website",
     siteName: siteConfig.name,
@@ -69,7 +72,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Bathroom & Kitchen Remodeling`,
+    title: `${siteConfig.name} | Remodeling, Masonry & Stonework`,
     description: siteConfig.description,
     images: ["/photos/upstate/hero-bathroom-v2.png"],
   },

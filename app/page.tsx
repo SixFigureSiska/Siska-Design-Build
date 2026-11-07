@@ -6,6 +6,7 @@ import { ServicesTeaser } from "@/components/ServicesTeaser";
 import { ProcessSteps } from "@/components/ProcessSteps";
 import { ResultsTeaser } from "@/components/ResultsTeaser";
 import { FinalCTA } from "@/components/FinalCTA";
+import { BuildersTeaser } from "@/components/BuildersTeaser";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <ProcessSteps />
       <NewGuys />
       <ResultsTeaser />
+      <BuildersTeaser />
       <FinalCTA />
     </>
   );
